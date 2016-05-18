@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">>
+        {% for choice in question.choice_set.all %}
+
+    </form>
+    <ul>
+
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
